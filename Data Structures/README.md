@@ -1,5 +1,13 @@
 # Data Structures
 
+- [Data Structures](#data-structures)
+  - [Goal](#goal)
+  - [Data Structures to implement:](#data-structures-to-implement)
+  - [Implementation details](#implementation-details)
+    - [Array List](#array-list)
+    - [Linked List](#linked-list)
+      - [Common problems to resolve on a linked list:](#common-problems-to-resolve-on-a-linked-list)
+
 A challenge designed to help beginners and intermediate programmers to implement and understand Data Structures.
 
 To begin, fork this project, clone it, create a new folder inside "Data Structures" folder and start solving the challenge there. Push a pull request for me to be able to review your solution.
