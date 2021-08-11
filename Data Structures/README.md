@@ -80,6 +80,9 @@ Feel free to decide what is the best hierarchy to reuse code, if using OOP.
 
 [Study Tonight](https://www.studytonight.com/data-structures/introduction-to-data-structures)
 
+[Wikipedia](https://en.wikipedia.org/wiki/List_of_data_structures)
+
+Study and make sure to understand the concept. Implement your own solution, try not to see other solutions. Make an effort and only when you are really stuck, take a peek and continue developing your own solution.
 
 ## Implementation details
 
