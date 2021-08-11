@@ -3,6 +3,7 @@
 - [Data Structures](#data-structures)
   - [Goal](#goal)
   - [Data Structures to implement](#data-structures-to-implement)
+  - [Data Structure theory resources](#data-structure-theory-resources)
   - [Implementation details](#implementation-details)
     - [Array List](#array-list)
     - [Linked List](#linked-list)
@@ -23,6 +24,12 @@
       - [Methods to implement](#methods-to-implement-4)
     - [Binary Search Tree](#binary-search-tree)
       - [Methods to implement](#methods-to-implement-5)
+    - [Binary Heap (Min and Max heap)](#binary-heap-min-and-max-heap)
+      - [Methods to implement](#methods-to-implement-6)
+    - [Priority Queue](#priority-queue)
+      - [Methods to implement](#methods-to-implement-7)
+    - [Graph](#graph)
+  - [After Implementation](#after-implementation)
 
 A challenge designed to help beginners and intermediate programmers to implement and understand Data Structures.
 
@@ -31,6 +38,8 @@ To begin, fork this project, clone it, create a new folder inside "Data Structur
 Any questions? Email me: jeremythen16@gmail.com
 
 ## Goal
+
+The purpose of this challenge is to have a guide to study/practice data structures, to implement the essential functionalities.
 
 With this challenge, we try to cover a few important points:
 
@@ -65,6 +74,13 @@ With this challenge, we try to cover a few important points:
 
 Feel free to decide what is the best hierarchy to reuse code, if using OOP.
 
+## Data Structure theory resources
+
+[Towards Data Science](https://towardsdatascience.com/8-common-data-structures-every-programmer-must-know-171acf6a1a42)
+
+[Study Tonight](https://www.studytonight.com/data-structures/introduction-to-data-structures)
+
+
 ## Implementation details
 
 ### Array List
@@ -91,10 +107,9 @@ Implement a `int size()` method to return the number of elements in the implemen
 
 Implement a `boolean isEmpty` method to return if the list is empty or not.
 
-Implement a `String toString()` method to return a representation of the list values in a string.
-
 Implement a `void reverse()` method to reverse the array list.
 
+Implement a `String toString()` method to return a representation of the list values in a string.
 
 ### Linked List
 
@@ -148,6 +163,8 @@ Implement a `int size()` method to see the size of the queue.
 
 Implement a `boolean isEmpty()` method to check if the queue is empty.
 
+Implement a `String toString()` method to return a representation of the queue values in a string.
+
 #### Problems to resolve on a queue:
 
 1) Reverse the queue
@@ -174,6 +191,8 @@ Implement a `T peek()` method to retrieve, but not remove, the element on the to
 Implement a `int size()` method to see the size of the stack.
 
 Implement a `boolean isEmpty()` method to check if the stack is empty.
+
+Implement a `String toString()` method to return a representation of the stack values in a string.
 
 #### Problems to resolve on a stack:
 
@@ -231,6 +250,11 @@ Implement a `V[] getValues()` method to return an array of all the values in the
 
 Implement a `V[] getEntries()` method to return an array of all the entries (key, value) in the hash map.
 
+Implement a `String toString()` method to return a representation of the map key-values in a string:
+```
+   {key1: value1, key2: value2}
+```
+
 ### HashSet
 
 Document the methods and specify the time and space complexity and the reason why this is, on the documentation comment.
@@ -256,8 +280,14 @@ Implement a `int size()` method to check the size of the set.
 
 Implement a `boolean isEmpty` method to check if the set is empty.
 
+Implement a `String toString()` method to return a representation of the set values in a string:
+```
+   [1,2,3]
+```
 
 ### Linked Hash Map
+
+Document the methods and specify the time and space complexity and the reason why this is, on the documentation comment.
 
 A Linked Hash Map is a hash map implemented with an array of linked nodes, in a way that each know inserted points to another node, just a regular singly linked list. This is useful to keep the order in each the elements were inserted in the hash map, while keeping the same time complexity and efficiency on the put/get/remove operations of the hash map.
 
@@ -305,4 +335,92 @@ Implement a `String toStringPostOrder()` method to return a string representatio
 Implement a `String toStringPreOrder()` method to return a string representation of the binary search tree being traversed in an Pre Order way.
 
 Implement a `T[] toArrayInOrder()` method to return an array with all the elements from the tree, traversed in a In Order way.
+
+Implement a `T[] toArrayBreadthFirst()` method to return an array with all the elements from the tree, traversed in a Breadth-first way.
+
+### Binary Heap (Min and Max heap)
+
+Document the methods and specify the time and space complexity and the reason why this is, on the documentation comment.
+
+The Binary Heap data structure, is a binary tree where the root node keeps the smallest value in the tree (Min Heap), or the greatest value in the tree (Max Heap), in a way that, it's really efficient to see (peek) the smallest/greatest value in the tree (constant time).
+
+1) Implement a Min Heap
+2) Implement a Max Heap
+
+This data structure is usually implemented with an array as the backing data structure.
+
+In a Max Heap, the value in each node is greater than or equal to the values of it's children.
+
+In a Min Heap, the value in each node is smaller than or equal to the value of it's children.
+
+If we were to remove the root node, then we would need to find the next greatest (Max Heap) or smallest (Min Heap) to make it now the greatest/smallest in that heap.
+
+
+#### Methods to implement
+
+Implement a `void add(T element)` method to add an element to the heap.
+
+Implement a `T peek()` method to retrieve, but not remove, the value of the root node (the min element if it's a Min Heap, the max value if it's a Max Heap).
+
+Implement a `T remove()` method to remove and retrieve the value of the root node. This method should find the next min/max value to replace this element before turning.
+
+Implement a `T[] removeAll()` method to remove and retrieve all the elements in the tree. If it's a Min Heap, these values should be sorted in a ascending order. If it's a Max Heap, these values should now be sorted in a descending order.
+
+Implement a `int size()` method to see the size of the tree.
+
+Implement a `boolean isEmpty()` method to see if the tree is empty.
+
+### Priority Queue
+
+Document the methods and specify the time and space complexity and the reason why this is, on the documentation comment.
+
+A Priority Queue is a queue that automatically orders the element just added, to the position in the queue where it belongs based on it's priority.
+
+The priority can be anything. For simplicity, let's say that the priority is the same value that we are trying to push to the queue. If we are pushing integer numbers, then the value of these integers will be their priority.
+
+This data structure can be implemented using a Min or Max heap as the backing data structure, depending on how you want to treat the priorities. If a smaller value means more priority, then use a Min Heap to implement the priority queue.
+If a greater value means more priority, then use a Max Heap to implement the priority queue.
+
+The contract for this data structure, as it's name suggests, is exactly the same as a regular queue. The only difference is how it works internally. If an element is pushed at the tail of the queue, that element will potentially bubble up until it reaches the head of the line, if it's the smallest value (in a Min Heap), or if it's the greatest value (in a Max Heap).
+
+#### Methods to implement
+
+Implement all the methods defined in the Queue.
+
+### Graph
+
+// Pending...
+
+## After Implementation
+
+After implementing the data structures and analyzing the time and space complexity for all of the common operations on them, compare the similar data structures and based on how the work, time and space complexity, think about the following:
+
+1) Which is best for which scenario
+   1) Which is more efficient in terms of time and/or space complexity for certain scenarios.
+
+For example, we can compare an ArrayList with a LinkedList and think in which cases each of them could be a better option.
+When implementing an ArrayList, since we use an array as our backing data structure and the arrays once created they cannot grow dynamically, we need to create a new array with twice the space as the previous one and copy all the values of the previous array, whenever the previous array reaches it's maximum capacity while adding a new element.
+The LinkedList doesn't have to deal with that overhead.
+
+This is a good example. There are more things to think about for each data structure. Try to figure it out comparing the same operations on similar data structures and write some comments about, probably in a new .md file and push it with your solutions.
+
+To give you a heads up, try thinking about these after implementing them:
+
+Differences and similarities in terms of time and space complexity of:
+
+1) ArrayList vs. LinkedList
+   1) On their `add` methods
+   2) On their `get(int index)` methods
+   3) On their `remove(int index)` methods
+2) ArrayQueue vs. LinkedQueue
+   1) On their `add` methods
+   2) On their `remove` methods
+   3) On their `poll` methods
+   4) 3) On their `peek` methods
+3) ArrayStack vs. LinkedStack
+   1) On their `push` methods
+   2) On their `pop` methods
+   3) On their `peek` methods
+
+This will help you make a better decisions when selecting a data structure depending on the scenario.
 
