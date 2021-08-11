@@ -2,7 +2,7 @@
 
 - [Data Structures](#data-structures)
   - [Goal](#goal)
-  - [Data Structures to implement:](#data-structures-to-implement)
+  - [Data Structures to implement](#data-structures-to-implement)
   - [Implementation details](#implementation-details)
     - [Array List](#array-list)
     - [Linked List](#linked-list)
@@ -19,6 +19,10 @@
       - [Methods to implement](#methods-to-implement-2)
     - [HashSet](#hashset)
       - [Methods to implement](#methods-to-implement-3)
+    - [Linked Hash Map](#linked-hash-map)
+      - [Methods to implement](#methods-to-implement-4)
+    - [Binary Search Tree](#binary-search-tree)
+      - [Methods to implement](#methods-to-implement-5)
 
 A challenge designed to help beginners and intermediate programmers to implement and understand Data Structures.
 
@@ -37,7 +41,7 @@ With this challenge, we try to cover a few important points:
 5) Know when to use them and when to choose one over another.
 6) Advantages and disadvantages
 
-## Data Structures to implement:
+## Data Structures to implement
 
 1) Array List
 2) Linked List
@@ -53,7 +57,7 @@ With this challenge, we try to cover a few important points:
    2) LinkedDeque
 7) Hash Map (Hash Tables)
 8) Hash Set
-9)  Linked Hash Map
+9) Linked Hash Map
 10) Binary Search Tree
 11) Binary Heap (Min and Max heap)
 12) Priority Queue
@@ -183,11 +187,10 @@ These problems needs to be solved on the two implementation of the stack, ArrayS
 
 Document the methods and specify the time and space complexity and the reason why this is, on the documentation comment.
 
-#### Methods to implement
-
 1) Implement an ArrayDeque (deque implemented with an array as the backing data structure).
    
 2) Implement a LinkedDeque (deque implemented with a Doubly Link List as the backing data structure)
+#### Methods to implement
 
 Implement all the methods defined in the Queue and these additional methods:
 
@@ -224,6 +227,10 @@ Implement a `int size()` method to check the size of the map.
 
 Implement a `boolean isEmpty` method to check if the map is empty.
 
+Implement a `V[] getValues()` method to return an array of all the values in the hash map.
+
+Implement a `V[] getEntries()` method to return an array of all the entries (key, value) in the hash map.
+
 ### HashSet
 
 Document the methods and specify the time and space complexity and the reason why this is, on the documentation comment.
@@ -249,4 +256,53 @@ Implement a `int size()` method to check the size of the set.
 
 Implement a `boolean isEmpty` method to check if the set is empty.
 
+
+### Linked Hash Map
+
+A Linked Hash Map is a hash map implemented with an array of linked nodes, in a way that each know inserted points to another node, just a regular singly linked list. This is useful to keep the order in each the elements were inserted in the hash map, while keeping the same time complexity and efficiency on the put/get/remove operations of the hash map.
+
+#### Methods to implement
+
+Implement all the methods defined in the Hash Map.
+
+When implementing `V[] getValues()` and `V[] getEntries()` methods, the values and entries should be returned in the order in which they were added to the map.
+
+### Binary Search Tree
+
+A Binary Search Tree is a data structure composed of nodes that can have up to 2 childing nodes. The first and main node is called the root node. Each node's child greater than the parent node needs to be to the right of the parent, and each node's child node less than the parent node needs to be to the left of the node.
+
+In this way, the search is really efficient, because when searching for a specific key or value, you will either go to the left or to the right and after each step, you will skip have of the remaining tree.
+
+To implement this data structure, use a sort of linked node, where the node is an objet that contains 3 properties:
+
+```
+Node
+ Node leftChild
+ Node rightChild
+ V value
+```
+
+where the leftChild will point to the node (or subtree) to the left (nodes whose values are less than their parent value).
+Where the rightChild will point to the node (or subtree) to the right (nodes whose values are greater than their parent value).
+And value, which will contain the value to keep and compare.
+
+#### Methods to implement
+
+Implement a `void add(T element)` method to add an element to the tree.  If the tree is empty, this will be the root node.
+
+Implement a `boolean remove(T element)` method to remove the specify value from the tree. Note that you will need to find a successor or predecessor to replace that node to keep the structure of the tree internally.
+
+Implement a `T getSuccessor(T element)` method to return the successor of this element. The successor is the element that would naturally succeed the specified element. If we have the elements 4,8,12,17,22,16, the successor of 12 if 17, because if we have all the numbers in order, 17 is the number that exactly goes after 12, based on their natural order.
+The successor of a node in a binary search tree is the left-most child of the first right child of the node.
+
+Implement a `T getPredecessor(T element)` method to return the predecessor of this element. The predecessor is the element that would naturally precede the specified element. If we have the elements 4,8,12,17,22,16, the predecessor of 12 if 8, because if we have all the numbers in order, 8 is the number that exactly goes before 12, based on their natural order.
+The predecessor of a node in a binary search tree is the right-most child of the first left child of the node.
+
+Implement a `String toStringInOder()` method to return a string representation of the binary search tree being traversed in an In Order way.
+
+Implement a `String toStringPostOrder()` method to return a string representation of the binary search tree being traversed in an Post Order way.
+
+Implement a `String toStringPreOrder()` method to return a string representation of the binary search tree being traversed in an Pre Order way.
+
+Implement a `T[] toArrayInOrder()` method to return an array with all the elements from the tree, traversed in a In Order way.
 
