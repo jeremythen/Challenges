@@ -392,7 +392,16 @@ Implement all the methods defined in the Queue.
 
 ### Graph
 
-// Pending...
+Implement a Graph with an Adjacency List, weighted and unweighted, directed and undirected.
+Implement a simple Graph with an Adjacency Matrix.
+
+Implement a Depth First Search.
+Implement a Breadth First Search.
+
+Advanced:
+
+Implement a Minimum Spanning Tree
+Implement a Shortest Path
 
 ## After Implementation
 
