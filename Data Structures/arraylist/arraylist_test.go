@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/CarlosGomez-dev/data-structures/arraylist"
+	"example.com/challenge/data-structure/arraylist"
 )
 
 func TestArrayLstCreation(t *testing.T) {
